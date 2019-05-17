@@ -1,0 +1,200 @@
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    margin: 0  ;                   
+} 
+
+.flex{
+    display:flex                         
+}
+.title{
+    flex:1 ;
+    margin:0 auto;
+    font-family: 'Amatic SC';
+    font-family: 'Baloo Bhai', cursive; 
+    font-size: 40px;
+    
+}
+li{ font-family: 'Baloo Bhai', cursive; 
+   
+    font-size: 28px;
+    color:rgb(255,140,0);
+}
+.git_link>a{
+    color:rgb(189, 134, 25);
+    padding:20px;
+    margin-right: -50% ; 
+     font-family: 'Indie Flower', cursive;
+
+   
+}
+a{   color:rgba(0,288,322,1) ;
+    text-decoration:none;
+}
+
+
+
+
+.main{
+    height: 2000px;
+    width: 100%;
+    flex-direction: column;
+}
+.header{
+    width: 100%;
+    background:url("bgimage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    flex-basis:25%;
+    flex-direction: column;
+    justify-content: space-between
+    
+}
+.subheader{
+    /* flex:10%; */
+    width: 100%;
+    height: fit-content;   
+    padding:5px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+}
+
+
+
+
+.navigation_bar{
+  
+    flex:10;
+    /* height: auto; */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap:wrap;
+}
+@media (max-width: 991px){
+    .subheader{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .navigation_bar{
+        flex-direction: column;
+    }
+   
+}
+
+.text_area>h1{
+    font-family: 'Neucha', cursive;
+    color:white;
+}
+.text_area{
+    align-self: center;
+    color:white;
+    font-family: 'Karma', serif;
+    margin-left:10px;
+    width:fit-content;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.logo> img {
+    width: auto;
+    height : auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+.logo{  
+    flex:1;
+    background:url("logo.png") no-repeat;
+
+    margin-right: 10px;
+}
+@media (max-width: 991px){
+    .logo{
+        display: none;
+     margin:0;
+    }
+}
+
+
+
+.navigation_bar_item{
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 28px
+
+}
+@media (max-width: 991px){
+    .navigation_bar_item{
+        background: rgba(255,255,255,1);
+        margin:5px;
+    }
+}
+.navigation_bar_item:hover{
+    background-color: rgb(65,105,225);
+
+}
+
+.body_wrapper{ 
+    z-index: 2;
+    /* position:relative;
+    top:calc(100%/19); */
+    width: 100%;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+ .cover_pic >img {
+    width: auto;
+    height : auto;
+    max-height: 100%;
+    max-width: 100%;
+
+ 
+} 
+
+.PROJECTS{
+    width:100%;
+    height:auto;
+    flex-direction: column;
+}
+
+
+.SKILLS{
+    width:100%;
+    height:auto;
+    background:rgba(211,211,211,0.5);
+    flex-direction: column;
+}
+
+.project_list{
+    flex:2;
+}
+
+
+.TANKER{
+    height: auto;
+    margin-bottom:10px;
+}
+
+
+
+.AUDIO_VISUALISER{
+    height: auto;
+    margin-bottom:10px;
+    
+}
+
+
+.skills_li{
+    padding: 20px;
+}
+
+.footer{
+    height:300px;
+    background: url("coverpic.jpg") no-repeat ;
+    background-size:cover;
+    background-position: center;
+    
+}
