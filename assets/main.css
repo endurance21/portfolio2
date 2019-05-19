@@ -175,7 +175,7 @@ input[type=checkbox]:checked~.bar2{
     color:white;
 }
 .text_area{
-    height: 100vh;
+    height: 90vh;
     align-self: center;
     color:white;
     font-family: 'Karma', serif;
@@ -196,8 +196,7 @@ input[type=checkbox]:checked~.bar2{
 }
 
 .navigation_bar_item:hover{
-    background-color: rgb(255,255,225);
-    border-bottom: 3px dotted wheat;
+    border-bottom: 4px solid royalblue;
    
 }
 
