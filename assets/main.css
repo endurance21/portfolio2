@@ -83,7 +83,8 @@ a{
     background-color: white;
 }
 input{ 
-    width:60px;
+    margin-left:10px;
+    width:74px;
     height: 55px;
     position:absolute;
     top:0px;
@@ -132,6 +133,7 @@ input[type=checkbox]:checked~.bar2{
         flex:1;
     }
     .nav{
+        flex:1;
         height: 100%;
     }
     .nav span{
@@ -167,6 +169,9 @@ input[type=checkbox]:checked~.bar2{
    }
    .SKILLS>.skills_list>li{
     font-size:8vw; 
+   }
+   .text_area{
+       height: 100vh;
    }
 }
 
@@ -215,7 +220,7 @@ input[type=checkbox]:checked~.bar2{
 .project_list{
     flex:7;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .TANKER{
     height: auto;
