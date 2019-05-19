@@ -9,79 +9,166 @@ body{
     display:flex                         
 }
 .title{
-    flex:1 ;
+    flex:1;
     margin:0 auto;
     font-family: 'Amatic SC';
     font-family: 'Baloo Bhai', cursive; 
-    font-size: 40px;
-    
+    font-size: 40px;   
 }
-li{ font-family: 'Baloo Bhai', cursive; 
-   
+li{ 
+    font-family: 'Baloo Bhai', cursive;   
     font-size: 28px;
     color:rgb(255,140,0);
 }
+
 .git_link>a{
     color:rgb(189, 134, 25);
     padding:20px;
     margin-right: -50% ; 
-     font-family: 'Indie Flower', cursive;
-
-   
+    font-family: 'Indie Flower', cursive;  
 }
-a{   color:rgba(0,288,322,1) ;
+
+a{   
+    color:rgb(255,140,0);
     text-decoration:none;
 }
 
-
-
-
 .main{
-    height: 2000px;
     width: 100%;
     flex-direction: column;
 }
 .header{
+    height: 100vh;
     width: 100%;
+    background-color: grey;
     background:url("bgimage.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    flex-basis:25%;
+    /* flex-basis:36%; */
     flex-direction: column;
-    justify-content: space-between
+    justify-content: space-between;
     
 }
 .subheader{
-    /* flex:10%; */
+    transition: 0.5s;
     width: 100%;
+    position:relative;
     height: fit-content;   
     padding:5px;
     align-items:flex-start;
     flex-wrap:wrap;
 }
+.nav{
+    transition: 0.5s;
+    position: relative;
+    flex:10;
+}
+.nav span{
+    display: none;
+    position: absolute;
+    top:11px;
+    left:20px;
+    width:36px;
+    background: rgba(255,255,255,1);
+    
+}
+.toggle{
+    cursor: pointer;
+    position: absolute;
+    top:10px;
+    left:10px;
+    width:55px;
+    height: 45px;
+    background-color: white;
+}
+input{ 
+    width:60px;
+    height: 55px;
+    position:absolute;
+    top:0px;
+    opacity: 0;
+}
 
+input[type=checkbox]:checked~.bar1{
+    transform:translateY(4px) rotate(45deg);
+}
+input[type=checkbox]:checked~.bar2{
+    transform:translateY(-4px) rotate(-45deg);
+}
 
+.bar1{ 
+    transition: 0.5s;
+    transform: translateY(-4px);
+    height:5px;
+    margin:10px 2px 10px 4px ;
+}
+.bar2{
+    transition: 0.5s;
+    transform: translateY(4px);
+    height:5px;
+ 
+    margin:10px 2px 10px 4px;
+}
 
 
 .navigation_bar{
-  
+    transition: 0.5s;
     flex:10;
-    /* height: auto; */
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: baseline;
     flex-wrap:wrap;
 }
+
 @media (max-width: 991px){
+    .header{
+        height: 180vh;
+    }
     .subheader{
-        flex-direction: column;
-        align-items: stretch;
+        flex:9;
+        height: 100vh;
+    }
+    .text_area{
+        flex:1;
+    }
+    .nav{
+        height: 100%;
+    }
+    .nav span{
+        display: block;
+        background-color: rgb(255,140,0);
     }
     .navigation_bar{
-        flex-direction: column;
+        color:rgb(255,140,0);
+        flex-direction: column ;
+        align-items: center;
+        width:100%;
+        height: 100%;
+        justify-content: space-around;
+        display:none;
     }
-   
+     input[type=checkbox]:checked~.navigation_bar {
+       display: flex;
+       background: rgba(255,255,255,1);
+
+   } 
+   .navigation_bar_item>a{
+       font-size:13vw;
+   }
+   .text_area>h1{
+    font-size:11vw;
+   }
+   .title{
+    margin-top:20px;
+    font-size:11vw;
+   }
+   .project_list>li>div{
+    font-size:8vw; 
+   }
+   .SKILLS>.skills_list>li{
+    font-size:8vw; 
+   }
 }
 
 .text_area>h1{
@@ -89,9 +176,11 @@ a{   color:rgba(0,288,322,1) ;
     color:white;
 }
 .text_area{
+    height: 100vh;
     align-self: center;
     color:white;
     font-family: 'Karma', serif;
+    font-size: 25px;
     margin-left:10px;
     width:fit-content;
     align-items: center;
@@ -99,100 +188,68 @@ a{   color:rgba(0,288,322,1) ;
 }
 
 
-.logo> img {
-    width: auto;
-    height : auto;
-    max-height: 100%;
-    max-width: 100%;
-  }
-.logo{  
-    flex:1;
-    background:url("logo.png") no-repeat;
-
-    margin-right: 10px;
-}
-@media (max-width: 991px){
-    .logo{
-        display: none;
-     margin:0;
-    }
-}
-
-
 
 .navigation_bar_item{
+    transition: 0.3s;
     font-family: 'Baloo Bhai', cursive;
     font-size: 28px
 
 }
-@media (max-width: 991px){
-    .navigation_bar_item{
-        background: rgba(255,255,255,1);
-        margin:5px;
-    }
-}
-.navigation_bar_item:hover{
-    background-color: rgb(65,105,225);
 
+.navigation_bar_item:hover{
+    background-color: rgb(255,255,225);
+    border-bottom: 3px dotted wheat;
+   
 }
 
 .body_wrapper{ 
     z-index: 2;
-    /* position:relative;
-    top:calc(100%/19); */
     width: 100%;
     margin-bottom: 10px;
     flex-direction: column;
 }
-
- .cover_pic >img {
-    width: auto;
-    height : auto;
-    max-height: 100%;
-    max-width: 100%;
-
- 
-} 
-
 .PROJECTS{
     width:100%;
-    height:auto;
+    height:100vh;
     flex-direction: column;
+    justify-content: space-evenly;
 }
-
-
-.SKILLS{
-    width:100%;
-    height:auto;
-    background:rgba(211,211,211,0.5);
-    flex-direction: column;
-}
-
 .project_list{
-    flex:2;
+    flex:7;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
-
 .TANKER{
     height: auto;
     margin-bottom:10px;
 }
-
-
-
 .AUDIO_VISUALISER{
     height: auto;
     margin-bottom:10px;
     
 }
 
-
+.SKILLS{
+    width:100%;
+    height:100vh;
+    background:rgba(211,211,211,0.5);
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex:4;
+}
+.skills_list{
+    flex:7;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .skills_li{
-    padding: 20px;
+    margin-left: 5px;
+    padding: 10px;
+    list-style-position: inside;
 }
 
 .footer{
-    height:300px;
+    height:50vh;
     background: url("coverpic.jpg") no-repeat ;
     background-size:cover;
     background-position: center;
