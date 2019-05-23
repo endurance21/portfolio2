@@ -54,11 +54,22 @@ window.addEventListener('mousemove',function(event){
  mouse.y=event.pageY;
   }
  ); 
+ 
+ var j =0 ;
+ var count = 0;
 function animate(){
 requestAnimationFrame(animate);
+if(count==80){
+    count  = 0;
+    j++ ;
+     if(j>=5)
+        j = 0;
+ }
+ count ++ ;
 c.clearRect(0,0,canvas.width,canvas.height);
 c.font = "20vh Cinzel, serif";
-c.fillStyle = 'rgba(2255,255,255,0.4)';
+c.fillStyle = colors[j];
+c.globalAlpha = 0.5;
 c.textAlign = "center";
 c.fillText("DIVYANSHU_RAJ", canvas.width/2, canvas.height/2); 
 for(var i=0; i<circlearray.length; i++)
