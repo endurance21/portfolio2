@@ -1,6 +1,5 @@
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
-var colors=['#85144b',"#0074D9",'#D8C3A5','#FF851B'];
 var mouse =
 { x:undefined,y:undefined};
 var circlearray=[];
@@ -60,7 +59,7 @@ function animate(){
 requestAnimationFrame(animate);
  
 c.clearRect(0,0,canvas.width,canvas.height);
-c.font = "20vh Cinzel, serif";
+c.font = "8vh Cinzel, serif";
 c.fillStyle = 'rgba(255,255,255,0.4)';
 c.textAlign = "center";
 c.fillText("DIVYANSHU_RAJ", canvas.width/2, canvas.height/2); 
