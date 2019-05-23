@@ -59,7 +59,7 @@ function animate(){
 requestAnimationFrame(animate);
  
 c.clearRect(0,0,canvas.width,canvas.height);
-c.font = "8vh Cinzel, serif";
+c.font = "8vw Cinzel, serif";
 c.fillStyle = 'rgba(255,255,255,0.4)';
 c.textAlign = "center";
 c.fillText("DIVYANSHU_RAJ", canvas.width/2, canvas.height/2); 
