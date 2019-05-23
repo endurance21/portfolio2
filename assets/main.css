@@ -7,6 +7,9 @@ body{
 canvas{
     height:100%;
     width:100%;
+    position: absolute;
+    top:0px;
+    z-index: 1;
 }
 .flex{
     display:flex                         
@@ -59,6 +62,7 @@ a{
     padding:5px;
     align-items:flex-start;
     flex-wrap:wrap;
+    z-index: 2;
 }
 .nav{
     transition: 0.5s;
@@ -147,9 +151,7 @@ input[type=checkbox]:checked~.bar2{
         flex:1;
 
     }
-     canvas{
-         display:none
-     }
+
     .nav{
         flex:1;
         height: 100%;

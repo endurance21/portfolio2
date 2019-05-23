@@ -31,17 +31,17 @@ canvas.height  = innerHeight;
     }
     this.x+=this.dx;
     this.y+=this.dy;
-    // if(this.x-mouse.x<100&&this.x-mouse.x>-100&&this.y-mouse.y<100&&this.y-mouse.y>-100){
-    //  if(this.radius<40)
-    //   this.radius+=1;
-    // }
-    //  else if(this.radius>5)
-  	//  this.radius-=1;
+    if(this.x-mouse.x<100&&this.x-mouse.x>-100&&this.y-mouse.y<100&&this.y-mouse.y>-100){
+     if(this.radius<40)
+      this.radius+=1;
+    }
+     else if(this.radius>2)
+  	 this.radius-=1;
      this.draw();
           } 
  }  
   
- for(var i=0; i<80; i++)
+ for(var i=0; i<100; i++)
  	{   var x=Math.random()*canvas.width;
         var y=Math.random()*canvas.height;
         var dx=(Math.random()-0.5);
@@ -55,21 +55,13 @@ window.addEventListener('mousemove',function(event){
   }
  ); 
  
- var j =0 ;
- var count = 0;
+  
 function animate(){
 requestAnimationFrame(animate);
-if(count==80){
-    count  = 0;
-    j++ ;
-     if(j>=5)
-        j = 0;
- }
- count ++ ;
+ 
 c.clearRect(0,0,canvas.width,canvas.height);
 c.font = "20vh Cinzel, serif";
-c.fillStyle = colors[j];
-c.globalAlpha = 0.5;
+c.fillStyle = 'rgba(255,255,255,0.4)';
 c.textAlign = "center";
 c.fillText("DIVYANSHU_RAJ", canvas.width/2, canvas.height/2); 
 for(var i=0; i<circlearray.length; i++)
