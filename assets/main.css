@@ -4,7 +4,10 @@ html {
 body{
     margin: 0  ;                   
 } 
-
+canvas{
+    height:100%;
+    width:100%;
+}
 .flex{
     display:flex                         
 }
@@ -42,11 +45,8 @@ a{
 .header{
     height: 100vh;
     width: 100%;
-    background-color: grey;
-    background:url("bgimage.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color:black;
+    /* z-index:-1; */
     flex-direction: column;
     justify-content: space-between;
     
@@ -117,15 +117,23 @@ input[type=checkbox]:checked~.bar2{
     transition: 0.5s;
     flex:10;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: baseline;
     flex-wrap:wrap;
 }
-.text_area>h1{
-    font-family: 'Neucha', cursive;
-    color:white;
-    background: grey;
-    
+.navigation_bar>a{
+    background-color: 'red';
+}
+
+.navigation_bar_item{
+    transition: 0.3s;
+    font-family: 'Cinzel, serif';
+    font-size: 28px;
+    margin-left:5px;
+}
+
+.navigation_bar_item:hover{
+    border-bottom: 4px solid royalblue; 
 }
 @media (max-width: 991px){
     .header{
@@ -137,7 +145,11 @@ input[type=checkbox]:checked~.bar2{
     }
     .text_area{
         flex:1;
+
     }
+     canvas{
+         display:none
+     }
     .nav{
         flex:1;
         height: 100%;
@@ -146,6 +158,7 @@ input[type=checkbox]:checked~.bar2{
         display: block;
         background-color: rgb(255,140,0);
     }
+   
     .navigation_bar{
         color:rgb(255,140,0);
         flex-direction: column ;
@@ -159,7 +172,7 @@ input[type=checkbox]:checked~.bar2{
        display: flex;
        background: rgba(255,255,255,1);
 
-   } 
+     } 
    .navigation_bar_item>a{
        font-size:13vw;
    }
@@ -188,32 +201,23 @@ input[type=checkbox]:checked~.bar2{
 }
 
 
+
 .text_area{
     height: 90vh;
-    align-self: center;
+    /* align-self: center; */
     color:white;
    
     font-family: 'Karma', serif;
     font-size: 25px;
-    margin-left:10px;
-    width:fit-content;
-    align-items: center;
+    /* margin-left:10px; */
+    /* width:fit-content; */
+    /* align-items: center; */
     flex-wrap: wrap;
 }
 
 
 
-.navigation_bar_item{
-    transition: 0.3s;
-    font-family: 'Kaushan Script', cursive;
-    font-size: 28px
 
-}
-
-.navigation_bar_item:hover{
-    border-bottom: 4px solid royalblue;
-   
-}
 
 .body_wrapper{ 
     z-index: 2;
@@ -222,6 +226,7 @@ input[type=checkbox]:checked~.bar2{
     flex-direction: column;
 }
 .PROJECTS{
+    background:rgba(211,211,211,0.7);
     width:100%;
     height:100vh;
     flex-direction: column;
