@@ -40,11 +40,11 @@ canvas.height  = innerHeight;
           } 
  }  
   
- for(var i=0; i<100; i++)
+ for(var i=0; i<50; i++)
  	{   var x=Math.random()*canvas.width;
         var y=Math.random()*canvas.height;
-        var dx=(Math.random()-0.5);
-        var dy=(Math.random()-0.5);
+        var dx=(Math.random()-0.5)*3;
+        var dy=(Math.random()-0.5)*3;
         var radius=Math.random()*3;
     circlearray.push(new Circle(x,y,dx,dy,radius));
  	}
