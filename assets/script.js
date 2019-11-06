@@ -1,3 +1,15 @@
+var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+.add({
+  targets: '.ml6 .letter',
+  translateY: ["1.6em", 0],
+  translateZ:0,
+  duration: 1200,
+  delay: (el, i) => 70* i
+})
+
 
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
@@ -7,7 +19,7 @@ const radian  = Math.PI/180*2;
 
 const center = { x:innerWidth/2, y:innerHeight/2} ;
 const  color = ['green', 'cyan' ] ;
-canvas.style.backgroundColor = "black";
+// canvas.style.backgroundColor = "black";
 canvas.width = window.innerWidth ;
 canvas.height  = innerHeight;
 var gradient = c.createLinearGradient(100,0, canvas.width, 0);
@@ -24,7 +36,7 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
    this.draw = function(){ 
     c.beginPath();
     c.arc(this.x,this.y,this.radius,0,Math.PI*2,0);
-    c.fillStyle = 'rgba(255,255,255,.8)';
+    c.fillStyle = 'rgba(255,255,255,1)';
    // c.fillStyle = color[1];
     c.fill();
 
@@ -54,7 +66,7 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
  for(var i=0; i<80; i++)
      
  	{   let x = innerWidth/2;
-        let random  = Math.random()*8 + 3;
+        let random  = Math.random()*10 + 3;
         let dx;
         if(i%2==0){
            dx = random;
@@ -63,7 +75,7 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
         dx  = -random;
         var y =  innerHeight-200;
         var dy = -random;
-        var radius = Math.random()*3/2;
+        var radius = Math.random()*6;
     circlearray.push(new Circle(x,y,dx,dy,radius));
  	}
         
@@ -128,10 +140,23 @@ function Star(x, y, size, omega = 0){
 
 var star = new Star(500, 300, 30, .01);
 
-
+var time  = 0;
  
 function animate(){
 requestAnimationFrame(animate);
+time++;
+if(time==4*60)
+{
+
+   anime.timeline({loop: false})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.6em", 0],
+    translateZ:0,
+    duration: 1200,
+    delay: (el, i) => 70* i
+  })
+}
  
 c.clearRect(0,0,canvas.width,canvas.height);
 c.font = "8vw Cinzel, serif";
@@ -154,7 +179,7 @@ circlearray[i].update();
 else {
    circlearray[i].x = Math.random()*innerWidth;
    circlearray[i].dx = 0;
-   circlearray[i].dy = Math.random()*.8;
+   circlearray[i].dy = Math.random()*3;
    circlearray[i].update();
 }
 if(circlearray[i].y>=canvas.height){

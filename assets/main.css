@@ -8,12 +8,21 @@ body{
    display:block
 
 }
+.video{
+    height: 176vw;
+    position: fixed;
+    width:101vw;
+    top:0px;
+    z-index:2
+
+}
 canvas{
     height:100%;
     width:100%;
     position: fixed;
     top:0px;
-    z-index: 1;
+    z-index: 3;
+    border:2px solid red;
 }
 .flex{
     display:flex                         
@@ -140,7 +149,7 @@ input{
 .body_wrapper{ 
     position: absolute;
     top:75vh;
-    z-index:5;
+    z-index:10;
     width: 96%;
     height: 250vh;
     left: 2%;
@@ -234,7 +243,7 @@ input{
         margin:24px 2px 10px 4px;
     } 
     .body_wrapper{
-        top:80vh
+        top:100vh
     }
 
     .header{
@@ -304,3 +313,41 @@ input{
     
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ml6 {
+    position: absolute;
+    font-weight: 900;
+    font-size: 5.5em;
+    top:60vh;
+    left:5vw;
+  }
+  
+  .ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  
+  .ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+  .letters{
+      color:white;
+  }
