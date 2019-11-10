@@ -1,6 +1,10 @@
 var textWrapper = document.querySelector('.ml6 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
+if(document.getElementsByClassName('video')[0].paused){
+   console.log("hii")
+   document.getElementsByClassName('video')[0].muted = true;
+   document.getElementsByClassName('video')[0].play();
+}
 anime.timeline({loop: false})
 .add({
   targets: '.ml6 .letter',
