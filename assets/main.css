@@ -9,10 +9,10 @@ body{
 
 }
 .video{
-    height: 176vw;
+    height: 191vw;
     position: fixed;
     width:101vw;
-    top:0px;
+    top:-59px;
     z-index:2
 
 }
@@ -22,7 +22,6 @@ canvas{
     position: fixed;
     top:0px;
     z-index: 3;
-    border:2px solid red;
 }
 .flex{
     display:flex                         
@@ -155,14 +154,15 @@ input{
     left: 2%;
     right:2%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .PROJECTS{
     background-color: rgba(255, 255, 255, 1)    ;
     width:100%;
-    height:100vh;
+    height:auto;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-bottom: 100px;
 }
 .project_list{
     flex:7;
@@ -186,7 +186,7 @@ input{
 
 .SKILLS{
     width:100%;
-    height:100vh;
+    height:auto;
     background-color: white;
     flex-direction: column;
     justify-content: flex-start;
@@ -247,7 +247,7 @@ input{
     }
 
     .header{
-        height: 75vh;
+        height: 100vh;
         background-color: rgba(255, 255, 255, 0);
     }
     
@@ -312,6 +312,10 @@ input{
     background: rgb(255,140,0);
     
 }
+
+.subheader{
+    height:0px;
+}
 }
 
 
@@ -331,7 +335,7 @@ input{
     position: absolute;
     font-weight: 900;
     font-size: 5.5em;
-    top:60vh;
+    top:81vh;
     left:5vw;
   }
   
@@ -351,3 +355,16 @@ input{
   .letters{
       color:white;
   }
+
+ 
+
+
+
+
+
+
+.ml6::after{
+    content:;
+}
+
+ 
