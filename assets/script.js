@@ -5,6 +5,15 @@ if(document.getElementsByClassName('video')[0].paused){
    document.getElementsByClassName('video')[0].play();
 }
 
+anime.timeline({loop:false}).add({
+   targets: '.line',
+   scaleX: [0,1],
+   opacity: [0.5,1],
+   easing: "easeInOutExpo",
+   duration: 1400,
+   delay:3000
+ })
+
 anime.timeline({loop: false})
 .add({
   targets: '.ml6 .letter',
@@ -14,6 +23,18 @@ anime.timeline({loop: false})
   delay: (el, i) => 70* i
 })
 
+var textWrapper1 = document.querySelector('.ml12');
+textWrapper1.innerHTML = textWrapper1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml12 .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 3000,
+    delay: (el, i) => 4000 + 30 * i
+  });
 
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
@@ -40,7 +61,7 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
    this.draw = function(){ 
     c.beginPath();
     c.arc(this.x,this.y,this.radius,0,Math.PI*2,0);
-    c.fillStyle = 'rgba(255,255,255,1)';
+    c.fillStyle = 'rgba(255,255,255,.8)';
    // c.fillStyle = color[1];
     c.fill();
 
@@ -204,3 +225,85 @@ animate();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+const elem = document.querySelector('#nav-bg'),
+      toggleBtn = document.querySelector('#toggle-btn'),
+      elemH = elem.getBoundingClientRect().height,
+      elemW = elem.getBoundingClientRect().width,
+      toggles =  document.querySelectorAll('.wrapper #link');
+
+
+let open = false;
+let scale, offsetX, offsetY;
+
+const calculateValues = (() => {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  //const cssStyles = getComputedStyle(elem);
+  //const offsetValue = Number(cssStyles.getPropertyValue('--offset-value'));
+  const offsetValue = Number(getComputedStyle(elem).getPropertyValue('--offset-value'));
+
+  //  Offsets to center the circle
+  offsetX = (w/2) - (elemW/2) - offsetValue;
+  offsetY = (h/2) - (elemH/2) - offsetValue;
+
+  // Good old pythagoras
+  const radius = Math.sqrt((h ** 2)+(w ** 2));
+  scale = radius/(elemW/2)/2 + .1; // Add '.1' to compensate for Safari sub pixel blur issue
+  return scale;
+})
+
+
+const openMenu = () => {
+  elem.style.setProperty("--translate-x", `${offsetX*2}px`);
+  elem.style.setProperty("--translate-y", `-${offsetY*2}px`);
+  elem.style.setProperty("--scale", scale*2);
+  elem.style.setProperty("background", "wheat");
+}
+const closeMenu = () => {
+  elem.style.setProperty("--scale", 1);
+  elem.style.setProperty("--translate-x", 0);
+  elem.style.setProperty("--translate-y", 0);
+  elem.style.setProperty("background", "transparent");
+}
+const animateMenu = () => {
+  open ? openMenu() : closeMenu();
+};
+
+const toggleMenu = () => {
+  open = !open;
+  animateMenu();
+  toggleBtn.classList.toggle('shown');
+}
+
+const resizeHandler = () => { 
+  window.requestAnimationFrame(() => {
+    calculateValues();
+    animateMenu();
+  });
+}
+
+calculateValues();
+function handleClick(i){
+  if( toggles[i].getAttribute('href') != '#0')
+  toggleMenu();
+}
+
+//toggleBtn.onclick = toggleMenu;
+toggleBtn.addEventListener('click', toggleMenu, false);
+window.addEventListener("resize", resizeHandler, false);
+for(let i  = 0 ; i<toggles.length ; i++){
+   toggles[i].onclick = ()=>{ handleClick(i)}
+}
