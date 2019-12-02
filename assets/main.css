@@ -58,7 +58,7 @@ a{
 .header{
     background-color:'rgb(0,0,0)';
     z-index:2;
-    position:fixed;
+    /* position:fixed; */
     height: 100vh;
     top:0px;
     width: 100%;
@@ -146,10 +146,14 @@ a{
     font-size: 25px;
     flex-wrap: wrap;
 }
+.navbar{
+  position: relative;
+  z-index:2001 !important;
+}
 .body_wrapper{ 
     position: absolute;
     top:100vh;
-    z-index:2;
+    z-index:2000 !important;
     width: 96%;
     height: 250vh;
     left: 2%;
@@ -312,8 +316,6 @@ a{
 
 @media screen and (max-width: 991px){
 
-
-
     .ml6 {
         position: absolute;
         font-weight: 900;
@@ -357,6 +359,7 @@ a{
         position:absolute;
         top:66vh;
         left:23vw;
+        line-height: 13.2rem;
       }
       
       .ml12 .letter {
@@ -364,12 +367,6 @@ a{
         line-height: 1em;
         
       }
-    
-     
-    
-    
-    
-    
     
        
         .body_wrapper{
@@ -417,6 +414,7 @@ a{
 /* =======
 IMPORTS
 ======= */
+
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
 
 
@@ -439,6 +437,7 @@ WRAPPER
   font-weight: 600;
   width: 100%;
   position: relative;
+  background:white;
   
 }
 
@@ -448,12 +447,12 @@ NAVIGATION BACKGROUND
 ===================== */
 #nav-bg {
 	/* position: relative; */
-  transform-origin: 100% 0%;
-  transition: transform .3s;
+  transform-origin: 0% 0%;
+  transition: transform .9s;
   transform: translate(var(--translate-x), var(--translate-y)) scale(var(--scale));
   will-change: transform;
   pointer-events: none;
-  background: wheat;
+  background: transparent;
   z-index: 100;
 }
 
@@ -465,8 +464,8 @@ BUTTON
   position: fixed;
   height: calc(var(--btn-size)*1px);
   width: calc(var(--btn-size)*1px);
-  top: 20px;
-  right:20px;
+  top: 10px;
+  left:10px;
   /*left: calc(50% - (var(--btn-size)/2*1px)); if you wish to center it */
   border-radius: 50% !important;
   background: transparent;
@@ -610,7 +609,7 @@ nav ul {
 
 nav li {
   font-size: 5rem;
-  color: #212121;
+  color: white;
   user-select: none;
   transform: translate(-20px,20px) scale(.9);
   transition: 0s;
@@ -696,7 +695,7 @@ CONTENT
   font-size: calc(4vmin + 1em);
   text-align: center;
   margin: auto;
-  color: #fff;
+  /* color: #fff; */
   text-shadow: 0 6px 18px rgba(0,0,0,.1);
 }
 
@@ -740,7 +739,17 @@ img {
 }
 
 #link{
-    color:white;
+    /* color:white; */
     font-weight: 900;
     font-size:8rem;
+}
+
+@media screen and (max-width: 991px){
+  .btn{
+    height: 80px;
+    width:70px;
+  }
+  #toggle-btn span + span {
+    margin-top: 10px;
+  }
 }

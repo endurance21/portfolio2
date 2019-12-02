@@ -11,7 +11,7 @@ anime.timeline({loop:false}).add({
    opacity: [0.5,1],
    easing: "easeInOutExpo",
    duration: 1400,
-   delay:3000
+   delay:2000
  })
 
 anime.timeline({loop: false})
@@ -32,8 +32,8 @@ anime.timeline({loop: false})
     translateZ: 0,
     opacity: [0,1],
     easing: "easeOutExpo",
-    duration: 3000,
-    delay: (el, i) => 4000 + 30 * i
+    duration: 2000,
+    delay: (el, i) => 2000 + 30 * i
   });
 
 var canvas = document.querySelector('canvas');
@@ -261,22 +261,22 @@ const calculateValues = (() => {
 
   // Good old pythagoras
   const radius = Math.sqrt((h ** 2)+(w ** 2));
-  scale = radius/(elemW/2)/2 + .1; // Add '.1' to compensate for Safari sub pixel blur issue
+  scale = radius/(elemW/2) ; // Add '.1' to compensate for Safari sub pixel blur issue
   return scale;
 })
 
 
 const openMenu = () => {
-  elem.style.setProperty("--translate-x", `${offsetX*2}px`);
+  elem.style.setProperty("--translate-x", `-${offsetX*2}px`);
   elem.style.setProperty("--translate-y", `-${offsetY*2}px`);
-  elem.style.setProperty("--scale", scale*2);
-  elem.style.setProperty("background", "wheat");
+  elem.style.setProperty("--scale", scale);
+  elem.style.setProperty("background", "red");
 }
 const closeMenu = () => {
-  elem.style.setProperty("--scale", 1);
-  elem.style.setProperty("--translate-x", 0);
-  elem.style.setProperty("--translate-y", 0);
-  elem.style.setProperty("background", "transparent");
+  elem.style.setProperty("--scale", scale*0.1);
+  elem.style.setProperty("--translate-x", `-${offsetX*2}px`);
+  elem.style.setProperty("--translate-y", `-${offsetY*2}px`);
+  // elem.style.setProperty("background", "transparent");
 }
 const animateMenu = () => {
   open ? openMenu() : closeMenu();
