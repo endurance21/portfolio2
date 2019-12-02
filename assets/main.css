@@ -15,7 +15,7 @@ body{
     width:101vw;
     top:0px;
     z-index:2;
-    background-color: wheat;
+    background-color:black;
 
 }
 canvas{
@@ -32,17 +32,20 @@ canvas{
     flex:1;
     margin:0 auto;
     font-family: 'Lacquer', sans-serif;
-    font-size: 40px;   
+    font-size: 40px; 
+    color:rgb(255,140,0);
+
 }
 li{ 
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 28px;
-    color:rgb(255,140,0);
+    color:red;
 }
 
 .git_link>a{
     border:2px solid black;
-    color:rgb(189, 134, 25);
+    color:rgb(255,140,0);
+
     padding:5px;
     margin-right: -50% ; 
     font-family: 'Exo', sans-serif;
@@ -50,13 +53,13 @@ li{
 }
 
 a{   
-    color:rgb(255,140,0);
+    color:red;
     text-decoration:none;
 }
 
 
 .header{
-    background-color:'rgb(0,0,0)';
+    /* background-color:'rgb(0,0,0)'; */
     z-index:2;
     /* position:fixed; */
     height: 100vh;
@@ -162,7 +165,7 @@ a{
     justify-content: flex-start;
 }
 .PROJECTS{
-    background-color: rgba(255, 255, 255, 1)    ;
+    background-color: rgba(255, 255, 255, .1)    ;
     width:100%;
     height:auto;
     flex-direction: column;
@@ -192,7 +195,8 @@ a{
 .SKILLS{
     width:100%;
     height:auto;
-    background-color: white;
+    /* background-color: white; */
+    background-color: rgba(255, 255, 255, .1)    ;
     flex-direction: column;
     justify-content: flex-start;
 }
@@ -211,6 +215,7 @@ a{
     margin-left: 5px;
     padding: 10px;
     list-style-position: inside;
+    list-style-type: disc;
 }
 
 
@@ -269,6 +274,7 @@ a{
   }
   .letters{
       color:white;
+      
   }
   .line {
 	opacity: 0;
@@ -276,16 +282,17 @@ a{
 	left: 0;
 	height: 5px;
 	width: 100%;
-	background-color: #fff;
+	background-color:red;
 	transform-origin: 0% 0%;
-	bottom: 0;
+  bottom: 0;
+  background: -webkit-linear-gradient(#eee, #333);
   }
   .ml12 {
 	font-weight: 900;
 	font-size: 4em;
 	text-transform: uppercase;
     letter-spacing: 0.02em;
-    color:rgb(255,140,0);
+    color:red;
     position:absolute;
     top:80vh;
     left:29vw;

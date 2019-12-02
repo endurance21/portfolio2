@@ -11,7 +11,7 @@ anime.timeline({loop:false}).add({
    opacity: [0.5,1],
    easing: "easeInOutExpo",
    duration: 1400,
-   delay:2000
+   delay:1000
  })
 
 anime.timeline({loop: false})
@@ -33,7 +33,7 @@ anime.timeline({loop: false})
     opacity: [0,1],
     easing: "easeOutExpo",
     duration: 2000,
-    delay: (el, i) => 2000 + 30 * i
+    delay: (el, i) => 1200 + 30 * i
   });
 
 var canvas = document.querySelector('canvas');
@@ -61,7 +61,7 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
    this.draw = function(){ 
     c.beginPath();
     c.arc(this.x,this.y,this.radius,0,Math.PI*2,0);
-    c.fillStyle = 'rgba(255,255,255,.8)';
+    c.fillStyle = 'rgba(255,255,255,.5)';
    // c.fillStyle = color[1];
     c.fill();
 
@@ -69,13 +69,28 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
 
     this.update=function(){        
     if (this.x+this.radius>canvas.width||this.x-this.radius<0)
-            { this.dx=-this.dx;
+            {
+              //  this.dy=-this.dx;
+              // alert();
+              // this.dy = this.dy/100;
+              // this.radius = this.radius/20  ;
+              
             }
+            
    //  if( this.y+this.radius>canvas.height||this.y-this.radius<0){
    //  this.dy=-this.dy
    //  }
+   if( Math.random()>0.5 && this.dy>1){
+  //  this.dx = this.dx*1;
+  //  this.dy = this.dy*.9;
+   }
+   else{
+    // this.dx = this.dx*1.1;
+    // this.dy = this.dy*1.1;
+   }
     this.x+=this.dx;
     this.y+=this.dy;
+  
     
    //  if(this.x-mouse.x-mouse.radius<100&&this.x-mouse.x-mouse.radius>-100&&this.y-mouse.y-mouse.radius<100&&this.y-mouse.y-mouse.radius>-100){
    //   if(this.radius<40)
@@ -88,10 +103,10 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
           } 
  }  
   
- for(var i=0; i<80; i++)
+ for(var i=0; i<40; i++)
      
  	{   let x = innerWidth/2;
-        let random  = Math.random()*10 + 3;
+        let random  = Math.random()*5 + 3;
         let dx;
         if(i%2==0){
            dx = random;
@@ -100,7 +115,7 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
         dx  = -random;
         var y =  innerHeight-200;
         var dy = -random;
-        var radius = Math.random()*6;
+        var radius = Math.random()*10  ;
     circlearray.push(new Circle(x,y,dx,dy,radius));
  	}
         
@@ -130,6 +145,9 @@ window.onresize = ()=>{
    canvas.height = innerHeight;
 
 };
+
+
+
 
 function Star(x, y, size, omega = 0){
     this.x = x;
@@ -204,7 +222,12 @@ circlearray[i].update();
 else {
    circlearray[i].x = Math.random()*innerWidth;
    circlearray[i].dx = 0;
-   circlearray[i].dy = Math.random()*3;
+
+   if(Math.random()>0.5)
+   circlearray[i].dx = -Math.random()*1;
+   else
+    circlearray[i].dx = Math.random()*1;
+    circlearray[i].dy = Math.random()*3;
    circlearray[i].update();
 }
 if(circlearray[i].y>=canvas.height){
