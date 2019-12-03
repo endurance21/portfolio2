@@ -70,7 +70,7 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
     this.update=function(){        
     if (this.x+this.radius>canvas.width||this.x-this.radius<0)
             {
-              //  this.dy=-this.dx;
+               this.dx=-this.dx;
               // alert();
               // this.dy = this.dy/100;
               // this.radius = this.radius/20  ;
@@ -80,14 +80,7 @@ var gradient = c.createLinearGradient(100,0, canvas.width, 0);
    //  if( this.y+this.radius>canvas.height||this.y-this.radius<0){
    //  this.dy=-this.dy
    //  }
-   if( Math.random()>0.5 && this.dy>1){
-  //  this.dx = this.dx*1;
-  //  this.dy = this.dy*.9;
-   }
-   else{
-    // this.dx = this.dx*1.1;
-    // this.dy = this.dy*1.1;
-   }
+  
     this.x+=this.dx;
     this.y+=this.dy;
   
