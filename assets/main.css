@@ -227,6 +227,10 @@ a{
     
 }
 
+.project_list>a:hover{
+	color:white;
+}
+
  
 
 /* .nav span{
